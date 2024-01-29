@@ -5,4 +5,13 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://root:root@cluster0.jt
 
 module.exports = mongoose.connection;
 
-
+const sequelize = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PW,
+    {
+      host: 'localhost',
+      dialect: 'mysql',
+      port: 3306,
+    },
+  );
